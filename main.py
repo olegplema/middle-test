@@ -47,8 +47,10 @@ def write_file(output_file: str, lines: list[str]) -> None:
             f.write(line)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    file_data = read_file('data.txt')
-    result = find_lines_with_keyword(file_data, 'Lorem')
-    write_file('filtered.txt', result)
+    try:
+        file_data = read_file('data.txt')
+        result = find_lines_with_keyword(file_data, 'Lorem')
+        write_file('filtered.txt', result)
+    except:
+        print('An error occurred')
